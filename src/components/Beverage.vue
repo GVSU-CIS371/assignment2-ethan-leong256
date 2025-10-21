@@ -7,7 +7,7 @@
         <Creamer :cream="cream"/>
       </template>
       <template v-slot:mid>
-        <Syrup />
+        <Syrup :syrup="syrup" />
       </template>
       <template v-slot:bottom>
         <Base :base="base"/>
@@ -23,11 +23,12 @@ import Base from "./Base.vue";
 import Creamer from "./Creamer.vue";
 import Hot from "./Hot.vue";
 import Cold from "./Cold.vue";
-import type { BaseBeverageType, CreamerType } from "../stores/beverage";
+import type { BaseBeverageType, CreamerType, SyrupType } from "../stores/beverage";
 
 const props = defineProps<{
   isIced: boolean;
   base: BaseBeverageType;
   cream: CreamerType;
+  syrup: SyrupType;
 }>();
 </script>

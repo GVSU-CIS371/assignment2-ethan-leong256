@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Beverage :isIced="currentTemp === 'Cold'" :base="currentBase" :cream="currentCreamer"/>
+    <Beverage :isIced="currentTemp === 'Cold'" :base="currentBase" :cream="currentCreamer" :syrup="currentSyrup"/>
     <ul>
       <li>
         <template v-for="temp in temps" :key="temp">
@@ -45,13 +45,14 @@
         </template>
       </li>
       <li>
-        <template v-for="syrup in syrups" :key="syrup">
+        <template v-for="syrup in syrups" :key="syrup.id">
           <label>
             <input
               type="radio"
               name="syrup"
               :id="`r${syrup.id}`"
-              :value="syrup.id"
+              :value="syrup"
+              v-model="currentSyrup"
               />
               {{ syrup.name }}
           </label>
@@ -63,7 +64,7 @@
 
 <script setup lang="ts">
 import Beverage from "./components/Beverage.vue";
-import { temps, currentTemp, bases, creamers, syrups, currentBase, currentCreamer} from "./stores/beverage";
+import { temps, currentTemp, bases, creamers, syrups, currentBase, currentCreamer, currentSyrup} from "./stores/beverage";
 </script>
 
 <style lang="scss">
