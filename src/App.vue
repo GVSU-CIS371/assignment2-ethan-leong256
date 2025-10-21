@@ -16,13 +16,52 @@
           </label>
         </template>
       </li>
+      <li>
+        <template v-for="base in bases" :key="base">
+          <label>
+            <input
+              type="radio"
+              name="base"
+              :id="`r${base.id}`"
+              :value="base.id"
+            />
+            {{ base.name }}
+          </label>
+        </template>
+      </li>
+      <li>
+        <template v-for="cream in creamers" :key="cream">
+          <label>
+            <input
+              type="radio"
+              name="cream"
+              :id="`r${cream.id}`"
+              :value="cream.id"
+              />
+              {{ cream.name }}
+          </label>
+        </template>
+      </li>
+      <li>
+        <template v-for="syrup in syrups" :key="syrup">
+          <label>
+            <input
+              type="radio"
+              name="syrup"
+              :id="`r${syrup.id}`"
+              :value="syrup.id"
+              />
+              {{ syrup.name }}
+          </label>
+        </template>
+      </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
 import Beverage from "./components/Beverage.vue";
-import { temps, currentTemp } from "./stores/beverage";
+import { temps, currentTemp, bases, creamers, syrups} from "./stores/beverage";
 </script>
 
 <style lang="scss">
