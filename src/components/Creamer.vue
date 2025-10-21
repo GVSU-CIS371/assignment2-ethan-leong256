@@ -1,10 +1,24 @@
 <template>
   <div class="froth">
-    <div v-for=" in 5" class="foam"></div>
+    <div 
+      v-for="i in 5"
+      :key="i"
+      class="foam"
+      :style="{
+        backgroundColor: cream.color
+        }"
+      ></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { CreamerType } from '../stores/beverage';
+const props = defineProps<{
+  cream: CreamerType
+}>();
+</script>
+
+
 <style lang="scss" scoped>
 .froth {
   overflow: visible;

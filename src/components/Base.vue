@@ -25,13 +25,4 @@ const props = defineProps<{
   z-index: 300;
   /* // border-radius: 0.05em 0.05em 2.2em 2.2em; */
 }
-
-@keyframes pour-tea {
-  from {
-    height: 0%;
-  }
-  to {
-    height: 40%
-  }
-}
 </style>
