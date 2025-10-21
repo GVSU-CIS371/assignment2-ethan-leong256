@@ -14,6 +14,8 @@
 <script setup lang="ts">
 import type { CreamerType } from '../stores/beverage';
 const props = defineProps<{
+  // defineProps declares expected props automatically 
+  // handling changes to the object
   cream: CreamerType
 }>();
 </script>

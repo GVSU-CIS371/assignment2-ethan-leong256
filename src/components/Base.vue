@@ -10,6 +10,8 @@
 import type { BaseBeverageType } from '../stores/beverage';
 
 const props = defineProps<{
+  // defineProps declares expected props automatically 
+  // handling changes to the object
   base: BaseBeverageType;
 }>();
 </script>

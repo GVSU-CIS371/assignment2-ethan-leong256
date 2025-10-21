@@ -1,6 +1,7 @@
 <template>
   <div>
     <Beverage :isIced="currentTemp === 'Cold'" :base="currentBase" :cream="currentCreamer" :syrup="currentSyrup"/>
+    <!-- set default drink combo -->
     <ul>
       <li>
         <template v-for="temp in temps" :key="temp">
